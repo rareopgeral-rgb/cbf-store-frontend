@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>(Compre 1 e Leve 2) Camisa do Brasil Copa 2026 — CBF Store</title>
+    <meta
+      name="description"
+      content="Protótipo responsivo de página de produto com seleção de camisetas e checkout Pix simulado."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="productPage" class="page-shell">
+      <header class="topbar" aria-label="Topo">
+        <button class="icon-btn" type="button" aria-label="Voltar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <div class="top-actions">
+          <button class="icon-btn" type="button" aria-label="Compartilhar">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 8a3 3 0 1 0-2.83-4H15a3 3 0 0 0 .18 1L8.9 8.65a3 3 0 1 0 0 4.7l6.28 3.66A3 3 0 1 0 16 15.3l-6.28-3.66a3.3 3.3 0 0 0 0-1.28L16 6.7A3 3 0 0 0 18 8Z" />
+            </svg>
+          </button>
+          <button class="icon-btn cart-btn" type="button" aria-label="Carrinho">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6h15l-1.5 8.5H8L6 3H3" />
+              <path d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM18 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+            </svg>
+            <span id="cartCount" class="cart-badge">0</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="gallery" aria-label="Galeria do produto">
+        <div id="galleryTrack" class="gallery-track">
+          <article class="slide"><img src="assets/original/p01.jpeg" alt="Camisa Brasil Copa 2026 — imagem 1" /></article>
+          <article class="slide"><img src="assets/original/p02.jpeg" alt="Camisa Brasil Copa 2026 — imagem 2" /></article>
+          <article class="slide"><img src="assets/original/p03.jpeg" alt="Camisa Brasil Copa 2026 — imagem 3" /></article>
+          <article class="slide"><img src="assets/original/p04.jpeg" alt="Camisa Brasil Copa 2026 — imagem 4" /></article>
+          <article class="slide"><img src="assets/original/p05.jpeg" alt="Camisa Brasil Copa 2026 — imagem 5" /></article>
+          <article class="slide"><img src="assets/original/p06.jpeg" alt="Camisa Brasil Copa 2026 — imagem 6" /></article>
+          <article class="slide"><img src="assets/original/p07.jpeg" alt="Camisa Brasil Copa 2026 — imagem 7" /></article>
+          <article class="slide"><img src="assets/original/p08.jpeg" alt="Camisa Brasil Copa 2026 — imagem 8" /></article>
+          <article class="slide"><img src="assets/original/p09.jpeg" alt="Camisa Brasil Copa 2026 — imagem 9" /></article>
+          <article class="slide"><img src="assets/original/p10.jpeg" alt="Camisa Brasil Copa 2026 — imagem 10" /></article>
+        </div>
+        <button class="gallery-arrow gallery-prev" type="button" aria-label="Imagem anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <button class="gallery-arrow gallery-next" type="button" aria-label="Próxima imagem">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
+        <div class="gallery-counter"><span id="slideIndex">1</span>/10</div>
+        <div id="galleryDots" class="dots" aria-hidden="true"></div>
+      </section>
+
+      <section class="price-ribbon" aria-label="Oferta">
+        <div>
+          <span class="discount">48%</span>
+          <strong>R$ 67,90</strong>
+          <del>R$ 129,90</del>
+        </div>
+        <div class="flash">
+          <b>Oferta Relâmpago</b>
+          <span>Termina em <time id="countdown">00:09:52</time></span>
+        </div>
+      </section>
+
+      <section class="content-section upgrade-section" aria-label="Desbloqueie descontos">
+        <div class="upgrade-head">
+          <h2>Dê um upgrade em sua compra</h2>
+          <p>Raspe e desbloqueie promoções e prêmios exclusivos</p>
+        </div>
+
+        <button class="upg-tier is-selected" type="button" data-tier="1" data-price="67.90">
+          <span class="upg-check" aria-hidden="true"></span>
+          <span class="upg-info">
+            <b>1 Camisa</b>
+            <small>Oficial torcedor • frete grátis</small>
+          </span>
+          <span class="upg-prices">
+            <strong>R$ 67,90</strong>
+            <del>R$ 129,90</del>
+          </span>
+        </button>
+
+        <div class="upg-scratch-tier" data-tier="2" data-price="97.90">
+          <span class="upg-flag">⭐ MAIS VENDIDO</span>
+          <div class="scratch-wrap" data-scratch="2">
+            <div class="scratch-reveal">
+              <span class="upg-info">
+                <b>2 Camisas • leve a 2ª por só R$ 30</b>
+                <small>R$ 48,95 cada • economize R$ 161,90</small>
+              </span>
+              <span class="upg-prices">
+                <strong>R$ 97,90</strong>
+                <del>R$ 259,80</del>
+              </span>
+            </div>
+            <canvas class="scratch-canvas" data-canvas="2"></canvas>
+          </div>
+        </div>
+
+        <div class="upg-locked" data-tier="3" data-price="147.90">
+          <span class="upg-lock">🔒 Bloqueado</span>
+          <span class="upg-info"><b>3 Camisas + 2 bandeirões grátis</b></span>
+          <span class="upg-hint">Raspe o de cima</span>
+        </div>
+
+        <p class="upg-locktimer" id="upgLockTimer" hidden>
+          🔒 Preço revelado travado por <b id="upgLockTime">15:00</b>
+        </p>
+      </section>
+
+      <section class="content-section product-info">
+        <button class="scarcity" type="button">
+          <span>Oferta por tempo limitado - 29/06</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
+
+        <div class="title-row">
+          <h1>(Compre 1 e Leve 2) Camisa do Brasil Copa 2026</h1>
+          <button id="bookmarkBtn" class="bookmark" type="button" aria-label="Salvar produto">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-3-6 3Z" /></svg>
+          </button>
+        </div>
+
+        <div class="rating-line">
+          <span class="stars">★</span>
+          <b>4.8</b>
+          <a href="#reviews">(12.843)</a>
+          <span>•</span>
+          <span>57.432 vendidos</span>
+        </div>
+
+        <button class="shipping-card" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7z" /><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" /></svg>
+          <div>
+            <b>Frete grátis</b>
+            <span>Receba antes do jogo ou seu dinheiro de volta</span>
+            <small>Taxa de envio: <del>R$ 9,60</del></small>
+          </div>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
+
+        <button class="variant-card open-selector" type="button">
+          <span class="thumb-stack">
+            <img src="assets/original/p02.jpeg" alt="" />
+            <img src="assets/original/p07.jpeg" alt="" />
+          </span>
+          <strong>2 opções disponíveis</strong>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
+      </section>
+
+      <section id="reviews" class="content-section reviews">
+        <div class="section-head">
+          <h2>Avaliações dos clientes (12.843)</h2>
+          <a href="#">Ver mais</a>
+        </div>
+        <div class="score-row">
+          <strong>4.8</strong>
+          <span>/ 5</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="media-head">
+          <b>Fotos dos clientes (12)</b>
+          <a href="#">Ver todas as mídias →</a>
+        </div>
+        <div class="photo-strip" aria-label="Fotos de avaliações">
+          <img src="assets/original/r01.webp" alt="Foto do cliente 1" />
+          <img src="assets/original/r13.jpeg" alt="Foto do cliente 2" />
+          <img src="assets/original/r03.webp" alt="Foto do cliente 3" />
+          <img src="assets/original/r14.jpeg" alt="Foto do cliente 4" />
+          <img src="assets/original/r05.webp" alt="Foto do cliente 5" />
+          <img src="assets/original/r06.webp" alt="Foto do cliente 6" />
+          <img src="assets/original/r07.jpeg" alt="Foto do cliente 7" />
+          <img src="assets/original/r08.webp" alt="Foto do cliente 8" />
+          <img src="assets/original/r09.jpeg" alt="Foto do cliente 9" />
+          <img src="assets/original/r10.jpeg" alt="Foto do cliente 10" />
+          <img src="assets/original/r11.jpeg" alt="Foto do cliente 11" />
+          <img src="assets/original/r12.jpeg" alt="Foto do cliente 12" />
+        </div>
+        <div id="reviewList" class="review-list"></div>
+      </section>
+
+      <section class="store-summary">
+        <p>Avaliações da loja (9,7 mil)</p>
+        <span>Inclui imagens ou vídeos (967) • 5★ (9,5 mil)</span>
+      </section>
+
+      <section class="content-section store-card">
+        <img class="store-logo" src="assets/original/cbf-logo.jpg" alt="Logo CBF Store" />
+        <div>
+          <h2>CBF STORE</h2>
+          <p>Loja verificada • 79,8K vendido(s)</p>
+        </div>
+        <button type="button">Visitar</button>
+      </section>
+
+      <section class="content-section about">
+        <h2>Sobre este produto</h2>
+        <div class="promo-box">
+          <span>Promoção especial 2026</span>
+          <strong>COMPRE 1 E LEVE 2</strong>
+          <p>Vista a paixão nacional em dobro com duas camisetas de torcedor.</p>
+        </div>
+        <p>
+          O kit Home + Away combina visual esportivo, tecido leve e caimento moderno para acompanhar jogos,
+          encontros com amigos ou sua coleção.
+        </p>
+        <h3>Destaques do Produto</h3>
+        <ul>
+          <li>Tecido leve e confortável</li>
+          <li>Alta respirabilidade e secagem rápida</li>
+          <li>Caimento moderno e anatômico</li>
+          <li>Versões amarela e azul inclusas</li>
+          <li>Personalização opcional de nome e número</li>
+        </ul>
+        <h3>Informações Importantes</h3>
+        <ul>
+          <li>As medidas podem variar de 1 cm a 2,5 cm</li>
+          <li>Recomendamos conferir a tabela antes de finalizar</li>
+          <li>Estoque sujeito à disponibilidade</li>
+        </ul>
+        <h3>Cuidados com a Peça</h3>
+        <ul>
+          <li>Não utilizar amaciante</li>
+          <li>Lavar e passar do lado avesso</li>
+          <li>Não passar sobre estampas</li>
+          <li>Lavar com cores similares</li>
+        </ul>
+      </section>
+
+      <!-- ===== GARANTIA + PIX + FAQ ===== -->
+      <section class="content-section guarantee-block">
+        <div class="guarantee-card">
+          <span class="guarantee-ic">🛡️</span>
+          <div>
+            <b>Compra 100% garantida</b>
+            <p>Recebeu e não gostou? Você tem <strong>7 dias</strong> pra trocar ou devolver — a gente paga o frete da devolução.</p>
+          </div>
+        </div>
+
+        <div class="pix-badge-row">
+          <span class="pix-badge"><b>PIX</b> aprovação na hora</span>
+          <span class="pix-badge">🔒 Pagamento seguro</span>
+          <span class="pix-badge">🚚 Receba antes do jogo</span>
+        </div>
+
+        <h2 class="faq-title">Perguntas frequentes</h2>
+        <div class="faq">
+          <details open>
+            <summary>É camisa oficial?</summary>
+            <p>Camisa linha torcedor inspirada no modelo oficial da Seleção, tecido dry-fit, estampa termo-colada de alta durabilidade.</p>
+          </details>
+          <details>
+            <summary>Quanto tempo pra chegar?</summary>
+            <p>Capitais: 3 a 5 dias úteis. Interior/Norte/Nordeste: 5 a 10 dias. Frete grátis e rastreável — código enviado no e-mail e WhatsApp.</p>
+          </details>
+          <details>
+            <summary>Posso trocar o tamanho?</summary>
+            <p>Sim. 7 dias após receber pra trocar ou devolver com reembolso integral. O frete da troca é por nossa conta.</p>
+          </details>
+          <details>
+            <summary>Pago no Pix é seguro?</summary>
+            <p>Sim. O Pix é aprovado na hora e o pedido entra em separação imediatamente. Ambiente de pagamento criptografado.</p>
+          </details>
+          <details>
+            <summary>E se não gostar?</summary>
+            <p>Devolução em até 7 dias com reembolso integral, sem burocracia. Nosso objetivo é você vestir a camisa com orgulho.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <section id="checkoutPage" class="checkout-page" hidden>
+      <header class="checkout-header">
+        <button id="backToProduct" class="icon-btn" type="button" aria-label="Voltar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <h1>Finalizar compra</h1>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2" /><rect x="5" y="10" width="14" height="11" rx="2" /></svg>
+      </header>
+
+      <form id="checkoutForm" class="checkout-form">
+        <section class="checkout-card item-summary">
+          <img src="assets/original/p02.jpeg" alt="Kit de camisetas" />
+          <div>
+            <h2>Kit Camisas Brasil 2026</h2>
+            <p id="checkoutVariant">Cor: Amarelo • Tam. M • Oferta exclusiva</p>
+            <div class="qty">
+              <button type="button" aria-label="Diminuir quantidade">−</button>
+              <span>1</span>
+              <button type="button" aria-label="Aumentar quantidade">+</button>
+            </div>
+          </div>
+          <strong>R$ 89,93</strong>
+        </section>
+
+        <section class="checkout-card">
+          <h2>Dados pessoais</h2>
+          <label>Nome completo<input id="name" required autocomplete="name" placeholder="Seu nome" /></label>
+          <label>CPF<input id="cpf" required inputmode="numeric" placeholder="000.000.000-00" /></label>
+          <label>Celular<input id="phone" required inputmode="numeric" placeholder="(00) 00000-0000" /></label>
+          <label>E-mail<input id="email" required type="email" autocomplete="email" placeholder="voce@email.com" /></label>
+        </section>
+
+        <section class="checkout-card address-grid">
+          <h2>Endereço de entrega</h2>
+          <label>CEP<input id="cep" required inputmode="numeric" placeholder="00000-000" /></label>
+          <label>Número<input id="addrNumber" inputmode="numeric" placeholder="123" /></label>
+          <label class="checkline"><input type="checkbox" /> Meu endereço não possui número</label>
+          <label>Rua/Logradouro<input id="street" required placeholder="Rua, avenida..." /></label>
+          <label>Cidade<input id="city" required placeholder="Cidade" /></label>
+          <label>UF<input id="uf" required maxlength="2" placeholder="UF" /></label>
+          <label>Complemento<input id="complement" placeholder="Apartamento, bloco..." /></label>
+        </section>
+
+        <section class="checkout-card option-group">
+          <h2>Escolha o frete</h2>
+          <label class="radio-card active"><input type="radio" name="shipping" checked /> <span><b>Frete grátis</b><small>3 a 7 dias</small></span><strong>Grátis</strong></label>
+          <label class="radio-card"><input type="radio" name="shipping" /> <span><b>Expresso</b><small>2 a 3 dias</small></span><strong>R$ 19,97</strong></label>
+          <label class="radio-card"><input type="radio" name="shipping" /> <span><b>Jadlog</b><small>Chega amanhã</small></span><strong>R$ 25,97</strong></label>
+        </section>
+
+        <section class="checkout-card option-group">
+          <h2>Forma de pagamento</h2>
+          <label class="radio-card active"><input type="radio" name="payment" checked /> <span><b>Pix</b><small>Aprovação instantânea • QR Code simulado na próxima etapa</small></span></label>
+          <label class="radio-card disabled"><input type="radio" name="payment" disabled /> <span><b>Cartão de crédito</b><small>Indisponível nesta promoção</small></span></label>
+          <p class="notice">Esta demonstração não processa pagamentos reais.</p>
+        </section>
+
+        <section class="checkout-card bump-group">
+          <h2>Turbine seu pedido</h2>
+          <label class="co-bump" data-bump="acessorios">
+            <input type="checkbox" />
+            <span class="co-bump-check" aria-hidden="true"></span>
+            <span class="co-bump-info">
+              <b>🧢 Kit Acessórios Brasil</b>
+              <small>Boné + cachecol + chaveiro oficiais</small>
+            </span>
+            <span class="co-bump-price"><strong>+R$ 39,90</strong><del>R$ 89,90</del></span>
+          </label>
+          <label class="co-bump" data-bump="caneca">
+            <input type="checkbox" />
+            <span class="co-bump-check" aria-hidden="true"></span>
+            <span class="co-bump-info">
+              <b>☕ Caneca Térmica Brasil 2026</b>
+              <small>Pro café enquanto você vê o jogo</small>
+            </span>
+            <span class="co-bump-price"><strong>+R$ 19,90</strong><del>R$ 49,90</del></span>
+          </label>
+        </section>
+
+        <section class="checkout-card order-total">
+          <h2>Resumo do pedido</h2>
+          <p><span>Subtotal (1 item)</span><b>R$ 89,93</b></p>
+          <p><span>Promo "Compre 1 Leve 2"</span><b>Incluso</b></p>
+          <p><span>Frete</span><b>Grátis</b></p>
+          <p><span>Entrega estimada</span><b>3 a 7 dias</b></p>
+          <p class="total"><span>Total a pagar</span><b>R$ 89,93</b></p>
+          <small>ou 12x de R$ 7,49 sem juros</small>
+        </section>
+
+        <section class="trust-row" aria-label="Selos de confiança">
+          <span>Dados seguros</span>
+          <span>Reembolso</span>
+          <span>Rastreamento</span>
+        </section>
+      </form>
+    </section>
+
+    <nav class="bottom-bar" aria-label="Ações do produto">
+      <button type="button" class="mini-action">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10l8-6 8 6v10H4z" /></svg>
+        Loja
+      </button>
+      <button type="button" class="mini-action">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H8l-4 4z" /></svg>
+        Chat
+      </button>
+      <button id="addCartBtn" class="outline-cta open-selector" type="button">Adicionar ao carrinho</button>
+      <button class="solid-cta open-selector" type="button">Comprar Agora</button>
+    </nav>
+
+    <nav id="checkoutBar" class="checkout-bottom" hidden>
+      <button id="payBtn" class="solid-cta" type="button">Pagar R$ 89,93</button>
+      <p>Ao finalizar, você concorda com nossos termos de uso e política de privacidade.</p>
+    </nav>
+
+    <div id="selectorOverlay" class="overlay" hidden></div>
+    <aside id="selectorDrawer" class="selector-drawer" aria-hidden="true" aria-label="Escolha suas camisetas">
+      <div class="drawer-handle"></div>
+      <header class="drawer-head">
+        <img src="assets/original/p02.jpeg" alt="" />
+        <div>
+          <strong id="drawerPrice">R$ 67,90</strong>
+          <del>R$ 129,90</del>
+          <span class="discount">48%</span>
+          <small>Frete grátis</small>
+        </div>
+        <button id="closeDrawer" class="icon-btn" type="button" aria-label="Fechar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        </button>
+      </header>
+      <h2 id="drawerCount">Escolha sua camiseta (1 unidade)</h2>
+      <div id="shirtForms" class="shirt-forms"></div>
+      <button id="drawerBuyBtn" class="drawer-buy" disabled type="button">Comprar Agora</button>
+    </aside>
+
+    <dialog id="pixDialog" class="pix-dialog">
+      <button id="closePix" class="icon-btn" type="button" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+      </button>
+      <h2>Pague com Pix</h2>
+      <p class="pix-amount">Valor: <strong id="pixAmount">—</strong></p>
+      <img id="pixQr" class="pix-qr" alt="QR Code Pix" />
+      <p class="pix-instr">Escaneie o QR acima <b>ou</b> copie o código:</p>
+      <div class="pix-copy-row">
+        <input id="pixCodeField" class="pix-code" readonly />
+        <button id="pixCopyBtn" type="button">Copiar</button>
+      </div>
+      <p id="pixStatus" class="pix-status">⏳ Aguardando pagamento…</p>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
