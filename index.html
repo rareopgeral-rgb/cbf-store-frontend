@@ -88,27 +88,33 @@
           </span>
         </button>
 
-        <div class="upg-scratch-tier" data-tier="2" data-price="97.90">
-          <span class="upg-flag">⭐ MAIS VENDIDO</span>
-          <div class="scratch-wrap" data-scratch="2">
-            <div class="scratch-reveal">
-              <span class="upg-info">
-                <b>2 Camisas • leve a 2ª por só R$ 30</b>
-                <small>R$ 48,95 cada • economize R$ 161,90</small>
-              </span>
-              <span class="upg-prices">
-                <strong>R$ 97,90</strong>
-                <del>R$ 259,80</del>
-              </span>
+        <div class="upg-scratch-combo">
+          <span class="upg-flag">🎁 RASPE E DESBLOQUEIE 2 OFERTAS</span>
+          <div class="scratch-wrap scratch-wrap-combo" data-scratch="combo">
+            <div class="scratch-reveal combo-reveal">
+              <button type="button" class="upg-tier-row" data-tier="2" data-price="97.90">
+                <span class="upg-info">
+                  <b>2 Camisas • leve a 2ª por só R$ 30</b>
+                  <small>R$ 48,95 cada • economize R$ 161,90</small>
+                </span>
+                <span class="upg-prices">
+                  <strong>R$ 97,90</strong>
+                  <del>R$ 259,80</del>
+                </span>
+              </button>
+              <button type="button" class="upg-tier-row" data-tier="3" data-price="147.90">
+                <span class="upg-info">
+                  <b>3 Camisas + 2 bandeirões 🎁</b>
+                  <small>R$ 49,30 cada + 2 bandeirões grátis</small>
+                </span>
+                <span class="upg-prices">
+                  <strong>R$ 147,90</strong>
+                  <del>R$ 389,70</del>
+                </span>
+              </button>
             </div>
-            <canvas class="scratch-canvas" data-canvas="2"></canvas>
+            <canvas class="scratch-canvas" data-canvas="combo"></canvas>
           </div>
-        </div>
-
-        <div class="upg-locked" data-tier="3" data-price="147.90">
-          <span class="upg-lock">🔒 Bloqueado</span>
-          <span class="upg-info"><b>3 Camisas + 2 bandeirões grátis</b></span>
-          <span class="upg-hint">Raspe o de cima</span>
         </div>
 
         <p class="upg-locktimer" id="upgLockTimer" hidden>
@@ -118,7 +124,7 @@
 
       <section class="content-section product-info">
         <button class="scarcity" type="button">
-          <span>Oferta por tempo limitado - 29/06</span>
+          <span>Oferta por tempo limitado - até 00:00</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
         </button>
 
@@ -256,11 +262,11 @@
         <div class="faq">
           <details open>
             <summary>É camisa oficial?</summary>
-            <p>Camisa linha torcedor inspirada no modelo oficial da Seleção, tecido dry-fit, estampa termo-colada de alta durabilidade.</p>
+            <p>Camisa linha tailandesa 1:1, fiel à original — mesmo tecido dry-fit e estampa termo-colada de alta durabilidade do modelo oficial da Seleção.</p>
           </details>
           <details>
             <summary>Quanto tempo pra chegar?</summary>
-            <p>Capitais: 3 a 5 dias úteis. Interior/Norte/Nordeste: 5 a 10 dias. Frete grátis e rastreável — código enviado no e-mail e WhatsApp.</p>
+            <p>Nós do TikTok confiamos tanto na nossa logística que funciona assim: você recebe sua peça antes do jogo ou devolvemos seu dinheiro de volta e você fica com a compra.</p>
           </details>
           <details>
             <summary>Posso trocar o tamanho?</summary>
@@ -323,9 +329,17 @@
 
         <section class="checkout-card option-group">
           <h2>Escolha o frete</h2>
-          <label class="radio-card active"><input type="radio" name="shipping" checked /> <span><b>Frete grátis</b><small>3 a 7 dias</small></span><strong>Grátis</strong></label>
-          <label class="radio-card"><input type="radio" name="shipping" /> <span><b>Expresso</b><small>2 a 3 dias</small></span><strong>R$ 19,97</strong></label>
-          <label class="radio-card"><input type="radio" name="shipping" /> <span><b>Jadlog</b><small>Chega amanhã</small></span><strong>R$ 25,97</strong></label>
+          <label class="radio-card active"><input type="radio" name="shipping" checked /> <span><b>Frete Grátis TikTok Full</b><small>Chega em 1 a 3 dias</small></span><strong>Grátis</strong></label>
+
+          <label class="co-bump co-bump-ship" data-bump="entregaSegura">
+            <input type="checkbox" />
+            <span class="co-bump-check" aria-hidden="true"></span>
+            <span class="co-bump-info">
+              <b>🛡️ Entrega Segura</b>
+              <small>Receba antes do jogo ou seu dinheiro de volta</small>
+            </span>
+            <span class="co-bump-price"><strong>+R$ 15,90</strong><del>R$ 36,00</del></span>
+          </label>
         </section>
 
         <section class="checkout-card option-group">
@@ -341,19 +355,19 @@
             <input type="checkbox" />
             <span class="co-bump-check" aria-hidden="true"></span>
             <span class="co-bump-info">
-              <b>🧢 Kit Acessórios Brasil</b>
-              <small>Boné + cachecol + chaveiro oficiais</small>
+              <b>🥤 Copo Stanley Brasil Copa</b>
+              <small>Térmico, oficial da torcida</small>
             </span>
-            <span class="co-bump-price"><strong>+R$ 39,90</strong><del>R$ 89,90</del></span>
+            <span class="co-bump-price"><strong>+R$ 32,90</strong><del>R$ 74,90</del></span>
           </label>
           <label class="co-bump" data-bump="caneca">
             <input type="checkbox" />
             <span class="co-bump-check" aria-hidden="true"></span>
             <span class="co-bump-info">
-              <b>☕ Caneca Térmica Brasil 2026</b>
-              <small>Pro café enquanto você vê o jogo</small>
+              <b>🧢 Boné Seleção Oficial 2026</b>
+              <small>Pra torcer com estilo</small>
             </span>
-            <span class="co-bump-price"><strong>+R$ 19,90</strong><del>R$ 49,90</del></span>
+            <span class="co-bump-price"><strong>+R$ 43,90</strong><del>R$ 99,90</del></span>
           </label>
         </section>
 

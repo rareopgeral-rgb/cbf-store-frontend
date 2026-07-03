@@ -54,18 +54,19 @@ const TIERS = {
   3: { shirts: 3, price: 147.9, old: 389.7, flags: 2, label: "3 Camisas + 2 bandeirões" }
 };
 const PERSO_UNIT = 9.9;
-const PRICES = { shipping: { free: 0, expresso: 19.97, jadlog: 25.97 } };
-const SHIPPING_LABEL = { free: "Frete grátis", expresso: "Expresso", jadlog: "Jadlog" };
+const PRICES = { shipping: { free: 0 } };
+const SHIPPING_LABEL = { free: "Frete Grátis TikTok Full" };
 const BUMPS = {
-  acessorios: { price: 39.9, label: "Kit Acessórios Brasil" },
-  caneca: { price: 19.9, label: "Caneca Térmica Brasil" }
+  acessorios: { price: 32.9, label: "Copo Stanley Brasil Copa" },
+  caneca: { price: 43.9, label: "Boné Seleção Oficial 2026" },
+  entregaSegura: { price: 15.9, label: "Entrega Segura" }
 };
 
 const orderState = {
   tier: 1,
   personalize: false,
   shipping: "free",
-  bumps: { acessorios: false, caneca: false }
+  bumps: { acessorios: false, caneca: false, entregaSegura: false }
 };
 
 function bumpsTotal() {
@@ -530,7 +531,7 @@ function setupCheckout() {
     setTimeout(() => (btn.textContent = "Copiar"), 1800);
   });
 
-  const shippingKeys = ["free", "expresso", "jadlog"];
+  const shippingKeys = ["free"];
   $$('input[name="shipping"]').forEach((input, index) => {
     input.addEventListener("change", () => {
       $$('.option-group input[name="shipping"]').forEach((item) => {
@@ -769,7 +770,7 @@ function makeScratch(wrap, onReveal) {
     return empty / total;
   };
   const check = () => {
-    if (revealed || cleared() <= 0.4) return;
+    if (revealed || cleared() <= 0.03) return;
     revealed = true;
     canvas.style.transition = "opacity 0.4s";
     canvas.style.opacity = "0";
@@ -803,42 +804,17 @@ function setupUpgrade() {
   const section = $(".upgrade-section");
   if (!section) return;
 
-  $("#addCartBtn"); // noop guard
   $(".upg-tier[data-tier='1']").addEventListener("click", () => selectTier(1));
 
-  const tier2 = $(".upg-scratch-tier[data-tier='2']");
-  makeScratch($(".scratch-wrap", tier2), () => {
-    selectTier(2);
-    tier2.addEventListener("click", () => selectTier(2));
-    unlockTier3();
-  });
-}
-
-function unlockTier3() {
-  const locked = $(".upg-locked[data-tier='3']");
-  if (!locked) return;
-  locked.classList.remove("upg-locked");
-  locked.classList.add("upg-scratch-tier");
-  locked.innerHTML = `
-    <span class="upg-flag">🔥 MELHOR CUSTO</span>
-    <div class="scratch-wrap" data-scratch="3">
-      <div class="scratch-reveal">
-        <span class="upg-info">
-          <b>3 Camisas + 2 bandeirões 🎁</b>
-          <small>R$ 49,30 cada + 2 bandeirões grátis</small>
-        </span>
-        <span class="upg-prices">
-          <strong>R$ 147,90</strong>
-          <del>R$ 389,70</del>
-        </span>
-      </div>
-      <canvas class="scratch-canvas" data-canvas="3"></canvas>
-    </div>`;
-  makeScratch($(".scratch-wrap", locked), () => {
-    locked.classList.add("upg-tier-revealed");
-    locked.addEventListener("click", () => selectTier(3));
-    selectTier(3);
-  });
+  const combo = $(".upg-scratch-combo");
+  if (combo) {
+    makeScratch($(".scratch-wrap", combo), () => {
+      combo.classList.add("is-revealed");
+    });
+    $$(".upg-tier-row", combo).forEach((row) => {
+      row.addEventListener("click", () => selectTier(Number(row.dataset.tier)));
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
