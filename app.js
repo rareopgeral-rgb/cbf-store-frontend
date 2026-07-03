@@ -475,6 +475,9 @@ async function payWithPix() {
   }
 }
 
+// Troque pelo número real do WhatsApp da loja (DDI+DDD+número, só dígitos).
+const WHATSAPP_NUMERO = "5511999999999";
+
 function startPolling(externalId) {
   if (pollTimer) clearInterval(pollTimer);
   pollTimer = setInterval(async () => {
@@ -483,16 +486,30 @@ function startPolling(externalId) {
       const o = await r.json();
       if (o.status === "paid" || o.status === "shipped") {
         clearInterval(pollTimer);
-        const status = $("#pixStatus");
-        status.textContent = o.tracking_code
-          ? `✅ Pagamento confirmado! Rastreio: ${o.tracking_code}`
-          : "✅ Pagamento confirmado!";
-        status.className = "pix-status is-paid";
+        showThanksPage(externalId);
       }
     } catch (e) {
       /* rede — tenta de novo no próximo tick */
     }
   }, 3000);
+}
+
+function showThanksPage(externalId) {
+  if ($("#pixDialog").open) $("#pixDialog").close();
+  $("#productPage").hidden = true;
+  $("#checkoutPage").hidden = true;
+  $(".bottom-bar").hidden = true;
+  $("#checkoutBar").hidden = true;
+  $("#thanksPage").hidden = false;
+
+  $("#thanksOrderId").textContent = "#" + externalId.slice(-8).toUpperCase();
+
+  const msg = encodeURIComponent(
+    `Olá! Acabei de pagar meu pedido ${externalId} e quero receber o código de rastreio 📦`
+  );
+  $("#thanksWhatsBtn").href = `https://wa.me/${WHATSAPP_NUMERO}?text=${msg}`;
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function setupCheckout() {
