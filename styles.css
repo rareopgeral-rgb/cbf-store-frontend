@@ -1928,27 +1928,34 @@ svg {
   font-size: 16px;
 }
 
-/* ===================== BUMP DE FRETE PULSANTE ===================== */
-.co-bump-ship {
-  position: relative;
-  border-color: #ffb3c1;
-  animation: ship-bump-pulse 1.8s ease-in-out infinite;
+/* ===================== BUMP DE FRETE (mesmo visual do radio-card, opcional) ===================== */
+.ship-bump {
+  cursor: pointer;
+  margin-top: 8px;
 }
 
-.co-bump-ship .co-bump-info b {
-  color: var(--cta);
+.ship-bump b {
+  color: var(--title);
 }
 
-@keyframes ship-bump-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(255, 32, 86, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(255, 32, 86, 0);
-  }
+.ship-bump.is-on {
+  border-color: var(--success);
+  background: var(--success-bg);
 }
 
-.co-bump-ship.is-on {
-  animation: none;
-  box-shadow: none;
+.ship-bump-price {
+  display: grid;
+  gap: 2px;
+  text-align: right;
+}
+
+.ship-bump-price strong {
+  color: var(--success);
+  font-size: 14px;
+}
+
+.ship-bump-price del {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
 }

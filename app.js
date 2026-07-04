@@ -543,7 +543,7 @@ function setupCheckout() {
     });
   });
 
-  $$(".co-bump").forEach((label) => {
+  $$(".co-bump, .ship-bump").forEach((label) => {
     const key = label.dataset.bump;
     const input = $("input", label);
     input.addEventListener("change", () => {
